@@ -104,7 +104,7 @@
 
                         <div class="panel-body">
                             <h2>API Adress (current):
-                                <a href="http://cgm6.research.cs.dal.ca/wikisim">http://cgm6.research.cs.dal.ca/wikisim</a>
+                                <a href="http://cgm6.research.cs.dal.ca/~sajadi/wikisim">http://cgm6.research.cs.dal.ca/~sajadi/wikisim</a>
                             </h2>
                             <h2>Sourcce code:
                                 <a href="https://github.com/asajadi/wikisim">https://github.com/asajadi/wikisim</a>
@@ -472,7 +472,7 @@
                                 <code>wikitext</code>: the text to be wikified
                                 <br> Example (using curl):
                                 <br>
-                                <code>curl --request POST 'http://cgm6.research.cs.dal.ca/wikisim/cgi-bin/cgi-wikify.py' -F 'modelparams=0'  -F 'wikitext=Lee Jun-fan known professionally as Bruce Lee, was founder of the martial art Jeet Kune Do'
+                                <code>curl --request POST 'http://cgm6.research.cs.dal.ca/~sajadi/wikisim/cgi-bin/cgi-wikify.py' -F 'modelparams=0'  -F 'wikitext=Lee Jun-fan known professionally as Bruce Lee, was founder of the martial art Jeet Kune Do'
                     </code>
                                 <li>
                                     <strong>Similarity Calculation</strong>:
@@ -486,7 +486,7 @@
                                     <code>c1 (and c2)</code>: the concept to be processed
                                     <br> Example (using curl):
                                     <br>
-                                    <code>curl --request POST 'http://cgm6.research.cs.dal.ca/wikisim/cgi-bin/cgi-pairsim.py' -F 'task=sim' -F 'dir=1' -F 'c1=Bruce_Lee' -F 'c2=Arnold_Schwarzenegger'</code>
+                                    <code>curl --request POST 'http://cgm6.research.cs.dal.ca/~sajadi/wikisim/cgi-bin/cgi-pairsim.py' -F 'task=sim' -F 'dir=1' -F 'c1=Bruce_Lee' -F 'c2=Arnold_Schwarzenegger'</code>
                                 </li>
                                 <li>
                                     <strong>Concept Representation (Embedding): </strong>
@@ -506,7 +506,7 @@
                                     <code>c1</code>: the concept to be processed
                                     <br> Example (using curl):
                                     <br>
-                                    <code>curl --request POST 'http://cgm6.research.cs.dal.ca/wikisim/cgi-bin/cgi-pairsim.py' -F 'task=emb' -F 'dir=1' -F 'cutoff=10' -F 'c1=Bruce_Lee'</code>
+                                    <code>curl --request POST 'http://cgm6.research.cs.dal.ca/~sajadi/wikisim/cgi-bin/cgi-pairsim.py' -F 'task=emb' -F 'dir=1' -F 'cutoff=10' -F 'c1=Bruce_Lee'</code>
                                 </li>
                         </ul>
                         <h3> Batch mode </h3>
@@ -522,21 +522,21 @@
                                 <code>cgi-batchwikify.py</code>
                                 <br> Example (using curl):
                                 <br>
-                                <code>curl --request POST 'http://cgm6.research.cs.dal.ca/wikisim/cgi-bin/cgi-batchwikify.py' -F 'modelparams=0'  -F 'file=@filename'</code>
+                                <code>curl --request POST 'http://cgm6.research.cs.dal.ca/~sajadi/wikisim/cgi-bin/cgi-batchwikify.py' -F 'modelparams=0'  -F 'file=@filename'</code>
                             </li>
                             <li>
                                 Similarity: use
                                 <code>cgi-batchsim.py</code>
                                 <br> Example (using curl):
                                 <br>
-                                <code>curl --request POST 'http://cgm6.research.cs.dal.ca/wikisim/cgi-bin/cgi-batchsim.py' -F 'task=sim' -F 'dir=1' -F 'file=@filename'</code>
+                                <code>curl --request POST 'http://cgm6.research.cs.dal.ca/~sajadi/wikisim/cgi-bin/cgi-batchsim.py' -F 'task=sim' -F 'dir=1' -F 'file=@filename'</code>
                             </li>
                             <li>
                                 Embedding: use
                                 <code>cgi-batchsim.py</code>
                                 <br> Example (using curl):
                                 <br>
-                                <code>curl --request POST 'http://cgm6.research.cs.dal.ca/wikisim/cgi-bin/cgi-batchsim.py' -F task='emb' -F 'dir=1' -F 'cutoff=10' -F 'file=@filename'</code>
+                                <code>curl --request POST 'http://cgm6.research.cs.dal.ca/~sajadi/wikisim/cgi-bin/cgi-batchsim.py' -F task='emb' -F 'dir=1' -F 'cutoff=10' -F 'file=@filename'</code>
                             </li>
                         </ul>
                     </div>
