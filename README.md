@@ -236,7 +236,7 @@
                             </li>
                             <li>
                                 <b>Note</b>
-                                The second field is a binary string and need to be properly unescaped. 
+                                The second field is a binary string and needs to be properly unescaped. 
                             The following function, defined in the
                                 <code>utile module</code> in the
                                 <a href="https://github.com/asajadi/wikisim/blob/master/wikisim/wikisim.ipynb#Utils">Wikisim notebook</a>, can read the embedding file.
