@@ -9,6 +9,7 @@ import scipy as sp
 import pandas as pd
 import cPickle as pickle
 import datetime
+import sys
 
 __author__ = "Armin Sajadi"
 __copyright__ = "Copyright 215, The Wikisim Project"
@@ -62,7 +63,7 @@ def str2delta(dstr):
     return datetime.timedelta(days=d, hours=h, minutes=m, seconds=s)
 
 
-def read_embedding_file(filename, records_number):
+def read_embedding_file(filename, records_number=sys.maxint):
     ''' return a dictinoray {'id': embedding} where each embedding is itself 
         a panda series
         Inputs:
