@@ -226,7 +226,7 @@
                     </li>
                     <li>
                         <p>
-                            <a href="../data/enwiki20160305/edited/enwiki-20160305-pagelinksorderedin.main.csv.gz">Embeddings (in-links)</a>
+                            <a href="../data/enwiki20160305/edited/enwiki-20160305-pagelinksorderedin.main.tsv.gz">Embeddings (in-links)</a>
                         </p>
                         <ul>
                             <li>Layout:
@@ -236,11 +236,10 @@
                             </li>
                             <li>
                                 <b>Note</b>
-                                Each embedding is itself a binary pickle of a tuple (
-                                <code>[ids]</code>,
-                                <code>[values]</code>), escaped by MySQL while exporting. The following function, defined in the
+                                The second field is a binary string and need to be properly unescaped. 
+                            The following function, defined in the
                                 <code>utile module</code> in the
-                                <a href="https://github.com/asajadi/wikisim/blob/master/wikisim/wikisim.ipynb#Utils">Wikisim notebook</a>> module, can read the embedding file.
+                                <a href="https://github.com/asajadi/wikisim/blob/master/wikisim/wikisim.ipynb#Utils">Wikisim notebook</a>, can read the embedding file.
                                 <p>
                                     <code>read_embedding_file(filename, records_number)</code>
                                 </p>
@@ -249,7 +248,7 @@
                     </li>
                     <li>
                         <p>
-                            <a href="../data/enwiki20160305/edited/enwiki-20160305-pagelinksorderedout.main.csv.gz">Embeddings (Out-Links) </a>
+                            <a href="../data/enwiki20160305/edited/enwiki-20160305-pagelinksorderedout.main.tsv.gz">Embeddings (Out-Links) </a>
                         </p>
                         <ul>
                             <li>Layout:
@@ -260,10 +259,10 @@
                             <li>
                                 <b>Note</b>
                             </li>
-                            <p>Similar to the above explanation for pagelinksorderedin, you need to use
+                            <p>Similar to the above explained sutuation with pagelinksorderedin, you need to use
                                 <code>read_embedding_file(filename, records_number)</code> to read the file. </p>
                         </ul>
-                    </li>
+                    </li>                    
                 </ol>
             </div>
         </div>

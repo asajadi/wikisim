@@ -3,9 +3,11 @@
 
 import os
 import re
+import csv
 import itertools
 import scipy as sp
 import pandas as pd
+import cPickle as pickle
 import datetime
 
 __author__ = "Armin Sajadi"
@@ -58,3 +60,35 @@ def str2delta(dstr):
     d=int(d) if d is not None else 0
     h,m,s = int(h), int(m), float(s)    
     return datetime.timedelta(days=d, hours=h, minutes=m, seconds=s)
+
+
+def read_embedding_file(filename, records_number):
+    ''' return a dictinoray {'id': embedding} where each embedding is itself 
+        a panda series
+        Inputs:
+            filename: embedding file name
+            records_number: number of the records to be read                
+    '''
+    prog = re.compile("(^[0-9]+),'([\d\D]*)'\n$");
+    embeddings={}
+    count=0
+    with open(filename,  'rb') as f:
+        line = ''
+        for l in f:
+            line +=l
+            if l.endswith('\\\n'):
+                continue
+            m = prog.match(line)
+            assert m is not None
+            wid = m.group(1)
+            pickle_string = re.sub("\\\\([0\\,\\'\\\\\\\n])",
+                                   lambda x:x.group(1) if x.group(1)!='0' else '\0' , m.group(2))
+            #embeddings[wid]= pickle_string
+            values, index = pickle.loads(pickle_string)
+            embeddings[m.group(1)]=pd.Series(values, index=index)
+
+            line=''
+            count += 1
+            if count >=records_number:
+                break
+    return embeddings
